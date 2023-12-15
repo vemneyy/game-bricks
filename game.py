@@ -5,11 +5,12 @@ from tkinter import ttk
 import tkinter as tk
 import sqlite3
 
+# Глобальные переменные для подсчета побед пользователя и компьютера
 user_win_count = 0
 computer_win_count = 0
 
 
-def main_game(input_username, main_panel):
+def main_game(input_username, main_panel, gender):
     # Создание главного окна Tkinter
     game = Toplevel()
     game.title(f'Игра "Кирпичи": {input_username}')  # Установка заголовка окна
@@ -22,10 +23,12 @@ def main_game(input_username, main_panel):
     background = Label(game, image=bg)
     background.place(x=0, y=0)
 
+    # Глобальные переменные для использования в функциях
     global hello_phrase
     # Установка иконки окна
     game.iconbitmap("pics/bricks.ico")
 
+    # Создание различных элементов интерфейса (меток и кнопок)
     computer_take = Label(game, text="0", bg="#ffffff", height=2, width=4, font=("Roboto", 30, "bold"), borderwidth=2,
                           relief="solid")
     computer_take.place(x=150, y=280)
@@ -89,6 +92,7 @@ def main_game(input_username, main_panel):
                          relief="solid")
     hello_phrase.place(x=295, y=60)
 
+    # Функции для работы с базой данных и обновления интерфейса
     def connect_db():
         # Подключение к базе данных
         return sqlite3.connect('data/users.db')
@@ -152,6 +156,7 @@ def main_game(input_username, main_panel):
 
         tree.pack(expand=True, fill='both')
 
+    # Функции для логики игры
     # Функция отключения и смена цвета кнопок
     def update_button_state():
         ammount_of_bricks = int(ammount['text'])
@@ -188,11 +193,18 @@ def main_game(input_username, main_panel):
             if 'hello_phrase' in globals():
                 hello_phrase.destroy()
 
-            user_win = Label(game, text=f"{input_username} победил", bg="#98FB98", height=2, width=25,
-                             font=("Roboto", 14, "bold"),
-                             borderwidth=3,
-                             relief="solid")
-            user_win.place(x=330, y=60)
+            if gender == 0:
+                user_win = Label(game, text=f"{input_username} победил", bg="#98FB98", height=2, width=25,
+                                 font=("Roboto", 14, "bold"),
+                                 borderwidth=3,
+                                 relief="solid")
+                user_win.place(x=330, y=60)
+            elif gender == 1:
+                user_win = Label(game, text=f"{input_username} победила", bg="#98FB98", height=2, width=25,
+                                 font=("Roboto", 14, "bold"),
+                                 borderwidth=3,
+                                 relief="solid")
+                user_win.place(x=330, y=60)
             user_win_count += 1
             user_count['text'] = user_win_count
             update_button_state()
@@ -299,7 +311,9 @@ def main_game(input_username, main_panel):
         game.destroy()
         main_panel.deiconify()
 
+    # Инициализация начального состояния игры
     ammount_of_bricks_func()
     update_button_state()
 
+    # Запуск главного цикла окна
     game.mainloop()
