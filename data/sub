@@ -1,7 +1,0 @@
-vless://d860b3ab-2bb6-4e54-adc6-3b5843b87e2b@172.245.187.177:443?security=reality&sni=telegram.org&alpn=h2&fp=chrome&pbk=C6HOqKSNcAVCygj6Aw14o84q3zshU66GokOE6ZSDHhw&sid=da78be4857564b35&type=tcp&flow=xtls-rprx-vision&encryption=none#USA%20(xray)
-vless://8821ed8f-c060-4943-ba18-b211cdcf4ff9@193.42.62.180:443?security=reality&sni=telegram.org&alpn=h2&fp=chrome&pbk=GoeYSYIcZoa5a0E2SOoHpY4wkY2S5Y_KlZUcGXoNiUY&sid=d8c409c2d5690010&type=tcp&flow=xtls-rprx-vision&encryption=none#FR%20(xray)
-vless://dfb9b57c-f9d4-4530-b101-a53e2781f2f9@188.143.154.72:443?security=reality&sni=tamtam.chat&alpn=h2&fp=chrome&pbk=T1EUAeHyz7ANFu8qdWZPWO01O428-i6WYA-aWolSaHY&sid=328a8a3b446060eb&type=tcp&flow=xtls-rprx-vision&encryption=none#RU%20(xray)
-ss://eGNoYWNoYTIwLWlldGYtcG9seTEzMDU6dzc2dGFNdHVmYUt6@172.245.187.177:8443#USA%20(shadowsocks)
-ss://eGNoYWNoYTIwLWlldGYtcG9seTEzMDU6bWpTeTNWM0NsemJ0M1NId2p0RHU=@193.42.62.180:8443#FR%20(shadowsocks)
-ss://YWVzLTI1Ni1nY206cGEzMzZcQSlFQnBlP1NWXSpdV3I=@167.99.254.239:1515#GER%20(shadowsocks)
-ss://eGNoYWNoYTIwLWlldGYtcG9seTEzMDU6MTZYeGo5NzlRZ29i@188.143.154.72:8443#RU%20(shadowsocks)
